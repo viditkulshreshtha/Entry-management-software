@@ -13,7 +13,7 @@ Install pip3 package
 `sudo apt install python-pip3`  
 
 Install the requirements  
-`pip3 install -r requirements.txt`  
+`./install_lib.sh`  
 
 
 ## Usage  
