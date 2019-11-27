@@ -28,11 +28,11 @@ NOTE - Make sure that you have python3 installed on the system. Also both the fi
 For checking in, the host has to enter the details into the fields that will be prompted on the terminal.  
 Host details will be saved in a file named `Host_Info` and the client details will be saved in a file named `Client_Info`.
 The site manager must create an account and register his mobile number from this [link](https://www.twilio.com/try-twilio).  
-<img src="https://github.com/viditkulshreshtha/Innovacer-Software-Intern/blob/master/Twilio_details.png" width = "500">
+<img src="https://github.com/viditkulshreshtha/Innovacer-Software-Intern/blob/master/images/Twilio_details.png" width = "500">
 
 After registration the site manager will get `account_sid` and `auth_token` that needs to be entered in `checkin.py`.  
 
-<img src = "https://github.com/viditkulshreshtha/Innovacer-Software-Intern/blob/master/Details.png" width = "600" height = "300">  
+<img src = "https://github.com/viditkulshreshtha/Innovacer-Software-Intern/blob/master/images/Details.png" width = "600" height = "300">  
 
 The sms and e-mail will be sent to the host during the time of check-in.  
 
