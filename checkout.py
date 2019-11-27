@@ -15,10 +15,10 @@ def client_details():
 	file = open(r"Client_Info", "r")
 	for entry in file.readlines():
 		entry = entry.split()
-		if entry[2] == client_email:
+		if entry[1] == client_email:
 			CheckOut_time = strftime("%Y-%m-%d/%H:%M:%S", time.localtime())
-			host_name = entry[5]
-			message = "\nName: " + entry[0] + " " + entry[1] + "\n" + "Phone: " + entry[3] + "\n" + "Check-in Time: " + entry[4] + "\n" + "Check-out Time: " + CheckOut_time + "\n" 
+			host_name = entry[4]
+			message = "\nName: " + entry[0] + "\n" + "Phone: " + entry[2] + "\n" + "Check-in Time: " + entry[3] + "\n" + "Check-out Time: " + CheckOut_time + "\n"
 			break
 	email_to_client(message, client_email,host_name)
 
@@ -32,13 +32,12 @@ def email_to_client(bodytext, client_email, host_name):
 	
 	subject = "Your visit to " + address + "."
 	message = 'Subject: {}\n\n{}'.format(subject, bodytext)
-	
 	try:
 		s = smtplib.SMTP('smtp.gmail.com', 587)
 		s.starttls()
 		s.login(login_id, login_password)
 	except:
-		print("Unable to login")
+		print("Unable to LogIn")
 	try:
 		s.sendmail(login_id, client_email, message)
 		print("Client Check-out Successful")
