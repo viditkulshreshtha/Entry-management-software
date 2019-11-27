@@ -25,7 +25,8 @@ NOTE - Make sure that you have python3 installed on the system. Also both the fi
 
 
 ## How it Works  
-For checking in, the host has to enter the details into the fields that will be prompted on the terminal. Host details will be saved in a file named `Host_Info` and the client details will be saved in a file named `Client_Info`.  
+For checking in, the host has to enter the details into the fields that will be prompted on the terminal.  
+Host details will be saved in a file named `Host_Info` and the client details will be saved in a file named `Client_Info`.
 The site manager must create an account and register his mobile number from this [link](https://www.twilio.com/try-twilio).  
 ![alt text](https://github.com/viditkulshreshtha/Innovacer-Software-Intern/blob/master/Twilio_details.png "Twilio details")
 
