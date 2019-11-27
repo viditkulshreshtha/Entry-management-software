@@ -34,8 +34,9 @@ After registration the site manager will get `account_sid` and `auth_token` that
 
 <img src = "https://github.com/viditkulshreshtha/Innovacer-Software-Intern/blob/master/images/Details.png" width = "600" height = "300">  
 
-The sms and e-mail will be sent to the host during the time of check-in.  
-<img src = "https://github.com/viditkulshreshtha/Innovacer-Software-Intern/blob/master/images/email.jpeg" width = "400" align = "left">
+
+The sms and e-mail will be sent to the host during the time of check-in.
+
 
 The email is sent to the user by the `smtplib` library of python and sms will be sent to the user by `twilio` library.  
 
