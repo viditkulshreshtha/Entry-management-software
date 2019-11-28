@@ -14,10 +14,19 @@ def client_details():
 	host_name = ""
 	file = open(r"Client_Info", "r")
 	for entry in file.readlines():
-		entry = entry.split()
-		if entry[1] == client_email:
+        temp_entry = entry.split('@')
+        left_entry = temp_entry[0].split()
+        right_entry = temp_entry[1].split()
+        left_len = len(left_entry)
+        right_len = len(right_entry)
+        if left_entry[-1] + '@' + right_entry[0] == client_email:
 			CheckOut_time = strftime("%Y-%m-%d/%H:%M:%S", time.localtime())
-			host_name = entry[4]
+			client_name = ""
+			 for i in range(left_len-1):
+                client_name = client_name + left_entry[i] + " "
+            host_name = ''
+            for i in range(3,right_len):
+                host_name = host_name + right_entry[i] + ' '
 			message = "\nName: " + entry[0] + "\n" + "Phone: " + entry[2] + "\n" + "Check-in Time: " + entry[3] + "\n" + "Check-out Time: " + CheckOut_time + "\n"
 			break
 	email_to_client(message, client_email,host_name)
