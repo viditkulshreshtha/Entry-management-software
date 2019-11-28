@@ -112,12 +112,17 @@ def client_details(host_name):
 # sending message to host
 def sms_to_host(message, account_sid, auth_token, twilio_contact, host_phone):
 
-    client = Client(account_sid, auth_token) 
-    message = client.messages.create( 
-                              from_= twilio_contact, 
-                              body = message, 
-                              to = host_phone
-                          )
+    try:
+        client = Client(account_sid, auth_token) 
+        message = client.messages.create( 
+                                  from_= twilio_contact, 
+                                  body = message, 
+                                  to = host_phone
+                              )
+        
+    except Exception as e:
+        print("Unable to send message!\n ", e)
+        # raise e
 
 
 #sending email to host
@@ -131,10 +136,19 @@ def email_to_host(body_text,host_name):
     host_email = ""
     file = open(r"Host_Info", "r")
     for entry in file.readlines():
-        entry = entry.split()
-        if entry[0] == host_name:
-            host_phone = entry[2]
-            host_email = entry[1]
+        temp_host_name = ""
+        temp_entry = entry.split('@')
+        left_entry = temp_entry[0].split()
+        right_entry = temp_entry[1].split()
+        left_len = len(left_entry)
+        right_len = len(right_entry)
+        for i in range(left_len-1):
+            temp_host_name = temp_host_name + left_entry[i] + " "
+            
+        if temp_host_name == host_name + " ":
+            host_phone = int(right_entry[1])
+            host_email = left_entry[-1] + '@' + right_entry[0]
+            break
 
     subject = "Client visit at " + address + "."
     message = 'Subject: {}\n\n{}'.format(subject, body_text)
