@@ -14,21 +14,21 @@ def client_details():
 	host_name = ""
 	file = open(r"Client_Info", "r")
 	for entry in file.readlines():
-        temp_entry = entry.split('@')
-        left_entry = temp_entry[0].split()
-        right_entry = temp_entry[1].split()
-        left_len = len(left_entry)
-        right_len = len(right_entry)
-        if left_entry[-1] + '@' + right_entry[0] == client_email:
+		entry_temp = entry.split('@')
+		entry_left = entry_temp[0].split()
+		entry_right = entry_temp[1].split()
+		left_len = len(entry_left)
+		len_right = len(entry_right)
+		if entry_left[-1] + '@' + entry_right[0] == client_email:
 			CheckOut_time = strftime("%Y-%m-%d/%H:%M:%S", time.localtime())
 			client_name = ""
-			 for i in range(left_len-1):
-                client_name = client_name + left_entry[i] + " "
-            host_name = ''
-            for i in range(3,right_len):
-                host_name = host_name + right_entry[i] + ' '
-			message = "\nName: " + entry[0] + "\n" + "Phone: " + entry[2] + "\n" + "Check-in Time: " + entry[3] + "\n" + "Check-out Time: " + CheckOut_time + "\n"
-			break
+			for i in range(left_len-1):
+				client_name = client_name + entry_left[i] + " "
+			host_name = ''
+			for i in range(3,len_right):
+				host_name = host_name + entry_right[i] + ' '
+			message = "\nName: " + host_name + "\n" + "Phone: " + entry_right[1] + "\n" + "Check-in Time: " + entry_right[2] + "\n" + "Check-out Time: " + CheckOut_time + "\n"
+
 	email_to_client(message, client_email,host_name)
 
 def email_to_client(bodytext, client_email, host_name):
