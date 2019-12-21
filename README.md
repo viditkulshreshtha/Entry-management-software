@@ -1,13 +1,13 @@
-# Innovacer-Software-Intern
+# Entry-management-software
 
 Simple Entry Management Software which keeps the record of the visitors who visit the office
 
 ## Installation
 Clone this directory.  
-`git clone https://github.com/viditkulshreshtha/Innovacer-Software-Intern.git`  
+`git clone https://github.com/viditkulshreshtha/Entry-management-software.git`  
 
 Enter the directory.  
-`cd Innovacer-Software-Intern`  
+`cd Entry-management-software`  
 
 Install pip3 package  
 `sudo apt install python-pip3`  
